@@ -1,4 +1,4 @@
-function getPlayerChoice() {
+/*function getPlayerChoice() {
     let input = prompt("Would you like to choose rock, paper, or scissors?");
     let output = input.toLowerCase();
 
@@ -15,7 +15,7 @@ function getPlayerChoice() {
         alert("Error: invalid input. Scissors has been chosen for you.");
         return "Scissors";
     }
-}
+}*/
 
 let computerChoice;
 let x;
@@ -47,7 +47,7 @@ function playRound(playerChoice, computerChoice) {
         winner = "computer"
         message = "You Lose! Scissors beat Paper";
     }
-    else if (playerChoice === "Scissor" && computerChoice === "Rock") {
+    else if (playerChoice === "Scissors" && computerChoice === "Rock") {
         winner = "computer"
         message = "You Lose! Rock beats Scissors";
     }
@@ -69,11 +69,33 @@ function playRound(playerChoice, computerChoice) {
     }
 }
 
+const rock = document.querySelector("#rock");
+rock.addEventListener("click", () => {
+    computerChoice = getComputerChoice(x);
+    playRound("Rock", computerChoice);
+    console.log(message);
+});
+
+const paper = document.querySelector("#paper");
+paper.addEventListener("click", () => {
+    computerChoice = getComputerChoice(x);
+    playRound("Paper", computerChoice);
+    console.log(message);
+});
+
+const scissors = document.querySelector("#scissors");
+scissors.addEventListener("click", () => {
+    computerChoice = getComputerChoice(x);
+    playRound("Scissors", computerChoice);
+    console.log(computerChoice);
+    console.log(message);
+});
+
 function game() {
     let playerScore = 0;
     let computerScore = 0;
 
-    for (let i = 0; i < 5; i++) {
+    /* for (let i = 0; i < 5; i++) {
         playerChoice = getPlayerChoice();
         computerChoice = getComputerChoice(x);
         playRound(playerChoice, computerChoice);
@@ -86,7 +108,7 @@ function game() {
             computerScore = computerScore + 1;
         }
         else {}
-    }
+    }*/
 
     if (playerScore > computerScore) {
         console.log("You won the round!")
@@ -99,4 +121,4 @@ function game() {
     }
 };
 
-game();
+//game();
