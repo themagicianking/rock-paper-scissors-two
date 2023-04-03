@@ -73,22 +73,21 @@ const rock = document.querySelector("#rock");
 rock.addEventListener("click", () => {
     computerChoice = getComputerChoice(x);
     playRound("Rock", computerChoice);
-    console.log(message);
+    results.textContent = message;
 });
 
 const paper = document.querySelector("#paper");
 paper.addEventListener("click", () => {
     computerChoice = getComputerChoice(x);
     playRound("Paper", computerChoice);
-    console.log(message);
+    results.textContent = message;
 });
 
 const scissors = document.querySelector("#scissors");
 scissors.addEventListener("click", () => {
     computerChoice = getComputerChoice(x);
     playRound("Scissors", computerChoice);
-    console.log(computerChoice);
-    console.log(message);
+    results.textContent = message;
 });
 
 function game() {
