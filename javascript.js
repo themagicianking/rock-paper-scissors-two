@@ -69,25 +69,43 @@ function playRound(playerChoice, computerChoice) {
     }
 }
 
+let playerScore = 0;
+let computerScore = 0;
+
+function scoreBoard(winner) { 
+    if (winner === "player") {
+        playerScore = playerScore + 1;
+        console.log(playerScore);
+    }
+    else if (winner === "computer") {
+        computerScore = computerScore + 1;
+    }
+    else {
+    }
+}
+
 const rock = document.querySelector("#rock");
 rock.addEventListener("click", () => {
     computerChoice = getComputerChoice(x);
     playRound("Rock", computerChoice);
-    results.textContent = message;
+    scoreBoard(winner);
+    results.textContent = message + " Player: " + playerScore + " Computer: " + computerScore;
 });
 
 const paper = document.querySelector("#paper");
 paper.addEventListener("click", () => {
     computerChoice = getComputerChoice(x);
     playRound("Paper", computerChoice);
-    results.textContent = message;
+    scoreBoard(winner);
+    results.textContent = message + " Player: " + playerScore + " Computer: " + computerScore;
 });
 
 const scissors = document.querySelector("#scissors");
 scissors.addEventListener("click", () => {
     computerChoice = getComputerChoice(x);
     playRound("Scissors", computerChoice);
-    results.textContent = message;
+    scoreBoard(winner);
+    results.textContent = message + " Player: " + playerScore + " Computer: " + computerScore;
 });
 
 function game() {
